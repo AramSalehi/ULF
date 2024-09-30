@@ -1,0 +1,17 @@
+numpy
+nibabel
+matplotlib
+tqdm
+patchify
+opencv-python
+scipy
+numpy
+torch
+torchvision
+tqdm
+matplotlib
+nibabel
+monai
+scikit-image
+einops
+torchio
