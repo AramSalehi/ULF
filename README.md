@@ -41,7 +41,7 @@ Once the required files are downloaded, you can run the `main.py` script to gene
 #### Example Command:
 
 ```bash
-python main.py --save_path 'output/' --num_samples 5 --noise_factor 1 --res 1.95 2.34 2.14 --fov 250 300 275 --seq 'SE' --tr_range 100 800 --te_range 10 50 --image_size 64
+python generate_dataset.py --save_path 'output/' --num_samples 5 --noise_factor 1 --res 1.95 2.34 2.14 --fov 250 300 275 --seq 'SE' --tr_range 100 800 --te_range 10 50 --image_size 64
 ```
 
 This will generate 5 samples with the specified TR-TE pairs and save them in the `output/` directory.
