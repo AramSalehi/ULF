@@ -33,40 +33,7 @@ Before running the scripts, you need to download essential data files from Googl
    - `flipAngleMaprescale_3D_gradientdistortion.npy`
    - `t2_star_tensor_3D_gradientdistortion.npy`
    - `ADC_3D_gradientdistortion.npy`
-
-### Step 2: Generate Data
-
-Once the required files are downloaded, you can run the `main.py` script to generate noisy and clean 3D images.
-
-#### Example Command:
-
-```bash
-python generate_dataset.py --save_path 'output/' --num_samples 5 --noise_factor 1 --res 1.95 2.34 2.14 --fov 250 300 275 --seq 'SE' --tr_range 100 800 --te_range 10 50 --image_size 64
-```
-
-This will generate 5 samples with the specified TR-TE pairs and save them in the `output/` directory.
-
-## Training the Model
-
-Once the data is prepared, you can train the 3D model using the `train.py` script.
-
-### Step 1: Prepare Data
-
-Ensure that the generated images and masks are located in the `data/images/` and `data/masks/` directories, respectively.
-
-### Step 2: Run the Training Script
-
-You can run the `train.py` script to train the model on the generated data. The script accepts the number of epochs as an argument.
-
-#### Example Command:
-
-```bash
-python train.py --epochs 10
-```
-
-This will train the model for 10 epochs and save the best model weights in the `essentials/model_weights/` directory.
-
-## Testing the Model
+## Run the Model
 
 Once the model has been trained, you can use the `test.py` script to run inference on new data.
 
@@ -98,6 +65,39 @@ This will run inference on all images in the `test_images/` directory and save t
 - The masks will be saved in the `masks/` directory.
 - The trained model weights will be saved in the `essentials/model_weights/` directory.
 - The predicted test results will be saved in the `results/` directory.
+
+###  Generate Data
+
+Once the required files are downloaded, you can run the `main.py` script to generate noisy and clean 3D images.
+
+#### Example Command:
+
+```bash
+python generate_dataset.py --save_path 'output/' --num_samples 5 --noise_factor 1 --res 1.95 2.34 2.14 --fov 250 300 275 --seq 'SE' --tr_range 100 800 --te_range 10 50 --image_size 64
+```
+
+This will generate 5 samples with the specified TR-TE pairs and save them in the `output/` directory.
+
+## Training the Model
+
+Once the data is prepared, you can train the 3D model using the `train.py` script.
+
+### Step 1: Prepare Data
+
+Ensure that the generated images and masks are located in the `data/images/` and `data/masks/` directories, respectively.
+
+### Step 2: Run the Training Script
+
+You can run the `train.py` script to train the model on the generated data. The script accepts the number of epochs as an argument.
+
+#### Example Command:
+
+```bash
+python train.py --epochs 10
+```
+
+This will train the model for 10 epochs and save the best model weights in the `essentials/model_weights/` directory.
+
 
 ## Further Steps
 
